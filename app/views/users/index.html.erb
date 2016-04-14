@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+<% content_for :title, @style.title %>
+
+
+<div id="header-page">
+
+  <span id="opener" style="border: groove">Change Title</span>
+  <span style="font-size:12px;" onclick="setFontElement('size-1')">A</span> | <span style="font-size:14px;" onclick="setFontElement('size-2')">A</span> | <span style="font-size:16px;padding-right: 20px;" onclick="setFontElement('size-3')">A</span>
+  <div class="cbox pink" onclick="setColorElement('color-1')"></div>
+  <div class="cbox yellow" onclick="setColorElement('color-2')"></div>
+  <div class="cbox blue" onclick="setColorElement('color-3')"></div>
+</div>
+
+<div id="profilecointainer">
+  <% @users.each do |user| %>
+    <div id="profileleft">
+      <table class="center">
+        <tr >
+          <td class="<%= @style.color %> <%= @style.font %>">Name</td>
+          <td class="<%= @style.color %> <%= @style.font %>"><%= user.name %></td>
+        </tr>
+        <tr>
+          <td class="<%= @style.color %> <%= @style.font %>">Email</td>
+          <td class="<%= @style.color %> <%= @style.font %>"><%= user.email %></td>
+        </tr>
+        <tr>
+          <td class="<%= @style.color %> <%= @style.font %>">Phone</td>
+          <td class="<%= @style.color %> <%= @style.font %>"><%= user.phone %></td>
+        </tr>
+        <tr>
+          <td class="<%= @style.color %> <%= @style.font %>">Address</td>
+          <td class="<%= @style.color %> <%= @style.font %>"><%= user.address %></td>
+        </tr>
+        <tr>
+          <td class="<%= @style.color %> <%= @style.font %>">Qualification</td>
+          <td class="<%= @style.color %> <%= @style.font %>"><%= user.qualification %></td>
+        </tr>
+
+      </table>
+    </div>
+  <% end %>
+</div>
+
+
+
+<div id="dialog1" hidden="hidden">
+<form class="form" action="#" id="form">
+  <input type="text" id="title" placeholder="Title" style="width: 250px;"/>
+</form>
+
+</div>
