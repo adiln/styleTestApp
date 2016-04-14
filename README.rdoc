@@ -31,9 +31,13 @@ Rails version  4.2.3
 Ruby Version 2.2.2
 
 Run follwoing commands
+
 bundle install
+
 rake db:create
+
 rake db:migrate
+
 rake db:seed  ## Need to populate some data on the page
 
 ===========================
